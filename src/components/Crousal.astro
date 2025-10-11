@@ -1,0 +1,136 @@
+<style>
+  /* The container for the entire deck */
+  .card-deck {
+    position: relative;
+    width: 100%; /* Use viewport width for responsiveness */
+    /* max-width: 300px; */
+    /* height: 20vw;  Use viewport width to maintain ratio initially */
+    max-height: 200px;
+    perspective: 1000px; /* Adds a bit of 3D depth for rotations */
+  }
+
+  /* Individual card styling */
+  .card {
+    position: absolute;
+    width: 100%;
+
+    /* This is the key property for the 3/2 width/height ratio */
+    aspect-ratio: 3 / 2;
+
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+
+    /* Smooth transition for movement, transform and opacity */
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    /* Center the number in the card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    user-select: none; /* Prevents text selection on click */
+  }
+
+  /* --- Card Stacking Logic using :nth-child --- */
+  /* This approach styles each card based on its position in the HTML structure. */
+  /* When a card is moved in the DOM, these styles are automatically reapplied. */
+
+  /* Top card (1st in the HTML) */
+  .card:nth-child(1) {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    z-index: 5;
+  }
+
+  /* Second card */
+  .card:nth-child(2) {
+    transform: translateX(2%) translateY(-4%) rotate(3deg);
+    z-index: 4;
+    opacity: 0.95;
+  }
+
+  /* Third card */
+  .card:nth-child(3) {
+    transform: translateX(3.5%) translateY(-6%) rotate(5deg);
+    z-index: 3;
+    opacity: 0.88;
+  }
+
+  /* Fourth card */
+  .card:nth-child(4) {
+    transform: translateX(5%) translateY(-7%) rotate(6deg);
+    z-index: 2;
+    opacity: 0.78;
+  }
+
+  /* Fifth card (and any others) will be stacked at the back */
+  /* 'n+5' selects the 5th element and all elements after it. */
+  .card:nth-child(n + 5) {
+    transform: translateX(6%) translateY(-8%) rotate(7deg);
+    z-index: 1;
+    opacity: 0.7;
+  }
+</style>
+
+<!-- The HTML structure for the card deck -->
+<div class="card-deck">
+  <div
+    class="card"
+    style="background: linear-gradient(135deg, #e57373, #ef5350);"
+  >
+    1
+  </div>
+  <div
+    class="card"
+    style="background: linear-gradient(135deg, #ba68c8, #ab47bc);"
+  >
+    2
+  </div>
+  <div
+    class="card"
+    style="background: linear-gradient(135deg, #64b5f6, #42a5f5);"
+  >
+    3
+  </div>
+  <div
+    class="card"
+    style="background: linear-gradient(135deg, #81c784, #66bb6a);"
+  >
+    4
+  </div>
+  <div
+    class="card"
+    style="background: linear-gradient(135deg, #ffd54f, #ffa726);"
+  >
+    5
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const deck = document.querySelector(".card-deck");
+
+    deck.addEventListener("click", (event) => {
+      // Find the specific card that was clicked inside the deck
+      const clickedCard = event.target.closest(".card");
+
+      // If the click was not on a card, do nothing
+      if (!clickedCard) return;
+
+      // Get the current top card (the first .card element in the deck)
+      const topCard = deck.querySelector(".card:first-child");
+
+      // We only want to cycle the deck if the top card is the one that's clicked
+      if (clickedCard === topCard) {
+        // This is the magic trick:
+        // appendChild() moves an existing element to the end of its parent's child list.
+        // This reorders the DOM, which causes the CSS :nth-child rules to be reapplied,
+        // and the 'transition' property animates the change smoothly.
+        deck.appendChild(clickedCard);
+      }
+    });
+  });
+</script>

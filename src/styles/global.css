@@ -6,7 +6,7 @@
   --accent-dark: #10172c;
   --white: #e4e8ea;
   --white-mute: #c6cbce;
-  --gray: oklch(87.2% 0.01 258.338);
+  --gray: oklch(70.7% 0.022 261.325);
 }
 
 @theme {
@@ -14,7 +14,7 @@
   --color-accent-dark: #10172c;
   --color-white: #e4e8ea;
   --color-white-mute: #c6cbce;
-  --color-gray: oklch(87.2% 0.01 258.338);
+  --color-gray: var(--gray);
 }
 
 body {

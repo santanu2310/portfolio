@@ -2,7 +2,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Crousal from "../components/Crousal.astro"
+import { SITE_TITLE, SITE_DESCRIPTION, ABOUT_ME } from "../consts";
 ---
 
 <!doctype html>
@@ -12,42 +13,47 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body>
     <Header />
-    <main >
-      <section class="w-full flex flex-col md:flex-row items-center justify-between">
+    <main>
+      <section
+        class="flex w-full flex-col items-center justify-between md:flex-row"
+      >
         <!-- Left Content: Text, Socials, and Buttons -->
-        <div class="w-[52%] flex flex-col text-gray gap-6">
-          <h2 class="text-3xl text-white-mute font-code">&lt;Hello&gt;</h2>
-          <h1 class="text-4xl md:text-5xl font-semibold">
+        <div class="text-gray flex w-[52%] flex-col gap-6">
+          <h2 class="text-white-mute font-code text-3xl">&lt;Hello&gt;</h2>
+          <h1 class="text-4xl font-semibold md:text-5xl">
             I'm <span class="text-primary">Santanu</span>
           </h1>
-          <h3 class="text-3xl md:text-[42px] font-normal">
+          <h3 class="text-3xl font-normal md:text-[42px]">
             I'm a<span class="font-code text-white">
-<span class="text-primary">{"{"}</span>Software Engineer<span class="text-primary">{"}"}</span>
+              <span class="text-primary">{"{"}</span>Software Engineer<span
+                class="text-primary">{"}"}</span
+              >
             </span>
           </h3>
           <p class="text-gray mt-2 text-lg">
-            Full-stack developer skilled in Python and TypeScript, building real-time and cloud-native scalable applications.
+            Full-stack developer skilled in Python and TypeScript, building
+            real-time and cloud-native scalable applications.
           </p>
 
           <!-- Social Media Icons -->
-          <div class="flex items-center text-2xl space-x-4 mt-2">
+          <div class="mt-2 flex items-center space-x-4 text-2xl">
             <a
               href="#"
-              class="text-gray-400 hover:text-white transition-colors duration-300"
+              class="text-gray-400 transition-colors duration-300 hover:text-white"
               aria-label="LinkedIn"
             >
               <i class="ri-linkedin-fill"></i>
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-white transition-colors duration-300"
+              class="text-gray-400 transition-colors duration-300 hover:text-white"
               aria-label="GitHub"
             >
               <i class="ri-github-fill"></i>
             </a>
             <a
               href="#"
-              class="text-gray-400 hover:text-white transition-colors duration-300"
+              class="text-gray-400 transition-colors duration-300 hover:text-white"
               aria-label="Twitter/X"
             >
               <i class="ri-twitter-x-line"></i>
@@ -55,15 +61,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           </div>
 
           <!-- Action Buttons -->
-          <div class="flex items-center gap-4 mt-4">
+          <div class="mt-4 flex items-center gap-4">
             <a
               href="#"
-              class="bg-teal-500 text-white font-semibold py-2 px-8 rounded-full shadow-lg shadow-teal-500/20 hover:bg-teal-600 transition-all duration-300"
+              class="rounded-full bg-primary px-8 py-2 font-semibold text-white shadow-lg shadow-teal-500/20 transition-all duration-300 hover:bg-teal-600"
               >Contact</a
             >
             <a
               href="#"
-              class="border border-gray-600 text-gray-300 font-semibold py-2 px-8 rounded-full hover:bg-gray-800 hover:border-gray-500 transition-all duration-300"
+              class="rounded-full border border-gray-600 px-8 py-2 font-semibold text-gray-300 transition-all duration-300 hover:border-gray-500 hover:bg-gray-800"
               >Download CV</a
             >
           </div>
@@ -71,24 +77,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
         <!-- Right Content: Code Snippet -->
         <div
-          class="w-[43%] font-code bg-[#161B22] rounded-lg border border-gray-700 shadow-2xl"
+          class="font-code w-[43%] rounded-lg border border-gray-700 bg-[#161B22] shadow-2xl"
         >
           <!-- Window Header -->
-          <div class="flex items-center gap-2 p-3 border-b border-gray-700">
-            <div class="flex-1 flex items-center gap-4 text-sm">
+          <div class="flex items-center gap-2 border-b border-gray-700 p-3">
+            <div class="flex flex-1 items-center gap-4 text-sm">
               <span
-                class="text-yellow-400 border-b-2 border-yellow-400 pb-3 -mb-3 px-2"
+                class="-mb-3 border-b-2 border-yellow-400 px-2 pb-3 text-yellow-400"
               >
                 📜 skills.js
               </span>
-              <span class="text-gray-500 hover:text-gray-300 cursor-pointer">
+              <span class="cursor-pointer text-gray-500 hover:text-gray-300">
                 🐍 master.py
               </span>
             </div>
           </div>
           <!-- Code Area -->
           <pre
-            class="p-4 text-sm overflow-x-auto text-white-mute"><code class="language-js"><span class="text-gray">// Tech I work with</span>
+            class="text-white-mute overflow-x-auto p-4 text-sm"><code class="language-js"><span class="text-gray">// Tech I work with</span>
 
 <span class="text-blue-400">const</span> techStack = {'{'}
   <span class="text-green-400">'frontend'</span>:  [<span class="text-orange-400">'HTML'</span>, <span class="text-orange-400">'Tailwind'</span>, <span class="text-orange-400">'JavaScript'</span>,
@@ -105,11 +111,176 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 console.<span class="text-yellow-400">log</span>(<span class="text-orange-400">"Presenting you my expertise:"</span>,
             learningPath);
-</span></code>
-                </pre>
+</code></pre>
         </div>
       </section>
-      <Footer />
+
+    <!-- About Section -->
+    <section class="mt-24 md:mt-32" id="about">
+      <h2 class="text-primary font-code mb-8 text-2xl font-medium">
+        &lt;<span class="text-white-mute font-normal">About</span>&gt;
+      </h2>
+
+      <!-- Left Content: About text and skills -->
+      <div class="flex flex-col gap-6 lg:col-span-2">
+        <p class="leading-relaxed text-gray-400" set:html={ABOUT_ME} />
+
+        <!-- Skills List -->
+        <div
+          class="font-code mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-primary md:text-base"
+        >
+          <span>Back End Development</span>
+          <span class="text-gray-600">|</span>
+          <span>Front End Development</span>
+          <span class="text-gray-600">|</span>
+          <span>Handle DevOps</span>
+          <span class="text-gray-600">|</span>
+          <span>❤️ building Real-Time System</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="mt-24 md:mt-32" id="projects">
+      <h2 class="font-code mb-12 text-2xl text-gray-400">&lt;Projects&gt;</h2>
+
+      <div class="flex flex-col gap-16">
+        <!-- Project 1 -->
+        <div class="flex flex-col items-start gap-8 lg:flex-row lg:gap-12">
+          <!-- Left Content: Project Info -->
+          <div class="flex flex-col gap-4 lg:w-2/3">
+            <h3 class="text-2xl font-bold text-white">Project Name One</h3>
+            <p class="leading-relaxed text-gray-400">
+              This is a detailed description of the first project. It highlights
+              the main features, the problems it solves, and the learning
+              process involved in building it from scratch. It was a challenging
+              yet rewarding experience.
+            </p>
+            <div
+              class="font-code flex flex-wrap gap-x-4 gap-y-2 text-sm text-teal-400"
+            >
+              <span>React</span>
+              <span>Tailwind CSS</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+            </div>
+            <div class="mt-4 flex items-center gap-6">
+              <a
+                href="#"
+                class="flex items-center gap-2 text-gray-300 transition-colors duration-300 hover:text-teal-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path></svg
+                >
+                Live Demo
+              </a>
+              <a
+                href="#"
+                class="flex items-center gap-2 text-gray-300 transition-colors duration-300 hover:text-teal-400"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                    clip-rule="evenodd"></path></svg
+                >
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+          <!-- Right Content: Image Slider Placeholder -->
+<div class="w-full lg:w-1/3"><Crousal /></div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="flex flex-col items-start gap-8 lg:flex-row-reverse lg:gap-12"
+        >
+          <!-- Left Content: Project Info -->
+          <div class="flex flex-col gap-4 lg:w-2/3">
+            <h3 class="text-2xl font-bold text-white">Project Name Two</h3>
+            <p class="leading-relaxed text-gray-400">
+              This project focuses on back-end development and security. It
+              involves creating a secure API, managing user authentication, and
+              ensuring data integrity. The main goal was to build a robust and
+              scalable server-side application.
+            </p>
+            <div
+              class="font-code flex flex-wrap gap-x-4 gap-y-2 text-sm text-teal-400"
+            >
+              <span>Python</span>
+              <span>Flask</span>
+              <span>JWT</span>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="mt-4 flex items-center gap-6">
+              <a
+                href="#"
+                class="flex items-center gap-2 text-gray-300 transition-colors duration-300 hover:text-teal-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  ></path></svg
+                >
+                Live Demo
+              </a>
+              <a
+                href="#"
+                class="flex items-center gap-2 text-gray-300 transition-colors duration-300 hover:text-teal-400"
+              >
+                <svg
+                  class="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                    clip-rule="evenodd"></path></svg
+                >
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+          <!-- Right Content: Image Slider Placeholder -->
+          <div class="w-full lg:w-1/3">
+            <div class="rounded-lg border border-gray-700 bg-[#161B22] p-2">
+              <img
+                src="https://placehold.co/600x400/0D1117/38BDF8?text=Project+Screenshot"
+                alt="Screenshot of Project Two"
+                class="h-full w-full rounded-md object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x400/0D1117/E2E8F0?text=Image+Not+Found';"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
+    <Footer />
   </body>
 </html>
