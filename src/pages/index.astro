@@ -1,50 +1,115 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main >
+      <section class="w-full flex flex-col md:flex-row items-center justify-between">
+        <!-- Left Content: Text, Socials, and Buttons -->
+        <div class="w-[52%] flex flex-col text-gray gap-6">
+          <h2 class="text-3xl text-white-mute font-code">&lt;Hello&gt;</h2>
+          <h1 class="text-4xl md:text-5xl font-semibold">
+            I'm <span class="text-primary">Santanu</span>
+          </h1>
+          <h3 class="text-3xl md:text-[42px] font-normal">
+            I'm a<span class="font-code text-white">
+<span class="text-primary">{"{"}</span>Software Engineer<span class="text-primary">{"}"}</span>
+            </span>
+          </h3>
+          <p class="text-gray mt-2 text-lg">
+            Full-stack developer skilled in Python and TypeScript, building real-time and cloud-native scalable applications.
+          </p>
+
+          <!-- Social Media Icons -->
+          <div class="flex items-center text-2xl space-x-4 mt-2">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors duration-300"
+              aria-label="LinkedIn"
+            >
+              <i class="ri-linkedin-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors duration-300"
+              aria-label="GitHub"
+            >
+              <i class="ri-github-fill"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition-colors duration-300"
+              aria-label="Twitter/X"
+            >
+              <i class="ri-twitter-x-line"></i>
+            </a>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center gap-4 mt-4">
+            <a
+              href="#"
+              class="bg-teal-500 text-white font-semibold py-2 px-8 rounded-full shadow-lg shadow-teal-500/20 hover:bg-teal-600 transition-all duration-300"
+              >Contact</a
+            >
+            <a
+              href="#"
+              class="border border-gray-600 text-gray-300 font-semibold py-2 px-8 rounded-full hover:bg-gray-800 hover:border-gray-500 transition-all duration-300"
+              >Download CV</a
+            >
+          </div>
+        </div>
+
+        <!-- Right Content: Code Snippet -->
+        <div
+          class="w-[43%] font-code bg-[#161B22] rounded-lg border border-gray-700 shadow-2xl"
+        >
+          <!-- Window Header -->
+          <div class="flex items-center gap-2 p-3 border-b border-gray-700">
+            <div class="flex-1 flex items-center gap-4 text-sm">
+              <span
+                class="text-yellow-400 border-b-2 border-yellow-400 pb-3 -mb-3 px-2"
+              >
+                📜 skills.js
+              </span>
+              <span class="text-gray-500 hover:text-gray-300 cursor-pointer">
+                🐍 master.py
+              </span>
+            </div>
+          </div>
+          <!-- Code Area -->
+          <pre
+            class="p-4 text-sm overflow-x-auto text-white-mute"><code class="language-js"><span class="text-gray">// Tech I work with</span>
+
+<span class="text-blue-400">const</span> techStack = {'{'}
+  <span class="text-green-400">'frontend'</span>:  [<span class="text-orange-400">'HTML'</span>, <span class="text-orange-400">'Tailwind'</span>, <span class="text-orange-400">'JavaScript'</span>,
+               <span class="text-orange-400">'TypeScript'</span>,<span class="text-orange-400">'Vue'</span>,<span class="text-orange-400">'Svelte'</span>],
+
+  <span class="text-green-400">'backend'</span>:   [<span class="text-orange-400">'Django'</span>, <span class="text-orange-400">'FastAPI'</span>,<span class="text-orange-400">'PostgreSQL'</span>,
+               <span class="text-orange-400">'MongoDB'</span>, <span class="text-orange-400">'Redis'</span>, <span class="text-orange-400">'RabbitMQ'</span>, <span class="text-orange-400">'Celery'</span>],
+
+  <span class="text-green-400">'languages'</span>: [<span class="text-orange-400">'Python'</span>, <span class="text-orange-400">'JavaScript/TypeScript'</span>],
+
+  <span class="text-green-400">'DevOps'</span>:    [<span class="text-orange-400">'Docker'</span>, <span class="text-orange-400">'Ansible'</span>, <span class="text-orange-400">'Terraform'</span>,
+               <span class="text-orange-400">'Github Actins'</span>]
+  {'}'}
+
+console.<span class="text-yellow-400">log</span>(<span class="text-orange-400">"Presenting you my expertise:"</span>,
+            learningPath);
+</span></code>
+                </pre>
+        </div>
+      </section>
+      <Footer />
+    </main>
+  </body>
 </html>
