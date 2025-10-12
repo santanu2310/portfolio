@@ -15,6 +15,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, ABOUT_ME } from "../consts";
     <Header />
     <main>
       <section
+        id="hero"
         class="flex w-full flex-col items-center justify-between md:flex-row"
       >
         <!-- Left Content: Text, Socials, and Buttons -->
@@ -117,7 +118,7 @@ console.<span class="text-yellow-400">log</span>(<span class="text-orange-400">"
       <br />
 
       <!-- About Section -->
-      <section class="mt-24 md:mt-32" id="about">
+      <section id="about" class="mt-18 pt-10 md:mt-32" id="about">
         <h2 class="text-primary font-code mb-8 text-2xl font-medium">
           &lt;<span class="text-white-mute font-normal">About</span>&gt;
         </h2>
@@ -141,10 +142,9 @@ console.<span class="text-yellow-400">log</span>(<span class="text-orange-400">"
         </div>
       </section>
       <br />
-      <br />
       <Projects />
     </main>
-
+    <br />
     <Footer />
   </body>
 </html>

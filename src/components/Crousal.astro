@@ -1,9 +1,10 @@
 ---
 interface Props {
+  id: string;
   images: string[];
 }
 
-const { images } = Astro.props;
+const { id, images } = Astro.props;
 ---
 
 <style>
@@ -84,7 +85,7 @@ const { images } = Astro.props;
 </style>
 
 <!-- The HTML structure for the card deck -->
-<div class="card-deck">
+<div class="card-deck" id={id}>
   <div
     class="card"
     style="background: linear-gradient(135deg, #e57373, #ef5350);"
@@ -116,9 +117,9 @@ const { images } = Astro.props;
     5
   </div>
 </div>
-<script>
+<script define:vars={{ id }}>
   document.addEventListener("DOMContentLoaded", () => {
-    const deck = document.querySelector(".card-deck");
+    const deck = document.querySelector(`#${id}`);
 
     deck.addEventListener("click", (event) => {
       // Find the specific card that was clicked inside the deck
