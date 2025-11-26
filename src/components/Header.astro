@@ -3,45 +3,66 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header>
-  <nav>
-    <h2>
-      <a href="/"
-        ><span style="color: var(--primary); font-weight: 700;">Coding </span> Santa</a
-      >
+<header class="px-4 py-8 sm:px-12 lg:px-20">
+  <nav class="flex items-center justify-between">
+    <h2 class="text-gray text-2xl font-medium lg:text-[28px]">
+      <a href="/"><span class="text-primary font-bold">Coding </span> Santa</a>
     </h2>
-    <div class="internal-links">
+    <div class="internal-links hidden sm:flex">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="#about">About</HeaderLink>
       <HeaderLink href="#projects">Projects</HeaderLink>
       <HeaderLink href="/blog">Contact</HeaderLink>
     </div>
   </nav>
+
+  <div
+    class="mob-nav fixed right-10 bottom-10 flex border border-gray-600"
+    id=""
+  >
+    <HeaderLink class={"mob-nav-link"} id={"home"} href="/"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        ><path
+          d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM11 13V19H13V13H11Z"
+        ></path></svg
+      ></HeaderLink
+    >
+    <HeaderLink href="#about" class={"mob-nav-link"}
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        ><path
+          d="M17.841 15.659L18.017 15.836L18.1945 15.659C19.0732 14.7803 20.4978 14.7803 21.3765 15.659C22.2552 16.5377 22.2552 17.9623 21.3765 18.841L18.0178 22.1997L14.659 18.841C13.7803 17.9623 13.7803 16.5377 14.659 15.659C15.5377 14.7803 16.9623 14.7803 17.841 15.659ZM12 14V16C8.68629 16 6 18.6863 6 22H4C4 17.6651 7.44784 14.1355 11.7508 14.0038L12 14ZM12 1C15.315 1 18 3.685 18 7C18 10.2397 15.4357 12.8776 12.225 12.9959L12 13C8.685 13 6 10.315 6 7C6 3.76034 8.56434 1.12237 11.775 1.00414L12 1ZM12 3C9.78957 3 8 4.78957 8 7C8 9.21043 9.78957 11 12 11C14.2104 11 16 9.21043 16 7C16 4.78957 14.2104 3 12 3Z"
+        ></path></svg
+      ></HeaderLink
+    >
+    <HeaderLink href="#projects" class={"mob-nav-link"}
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        ><path
+          d="M13 21V23.5L10 21.5L7 23.5V21H6.5C4.567 21 3 19.433 3 17.5V5C3 3.34315 4.34315 2 6 2H20C20.5523 2 21 2.44772 21 3V20C21 20.5523 20.5523 21 20 21H13ZM7 19V17H13V19H19V16H6.5C5.67157 16 5 16.6716 5 17.5C5 18.3284 5.67157 19 6.5 19H7ZM7 5V7H9V5H7ZM7 8V10H9V8H7ZM7 11V13H9V11H7Z"
+        ></path></svg
+      ></HeaderLink
+    >
+    <HeaderLink href="/blog"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        ><path
+          d="M3 3C2.44772 3 2 3.44772 2 4V20C2 20.5523 2.44772 21 3 21H21C21.5523 21 22 20.5523 22 20V4C22 3.44772 21.5523 3 21 3H3ZM6 7H12V13H6V7ZM8 9V11H10V9H8ZM18 9H14V7H18V9ZM14 13V11H18V13H14ZM6 17V15L18 15V17L6 17Z"
+        ></path></svg
+      ></HeaderLink
+    >
+  </div>
 </header>
 <style>
-  header {
-    margin: 0;
-    padding: 2rem 5rem;
-  }
-
-  h2 {
-    text-align: center;
-    margin: 0;
-  }
-  h2 > a {
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--white-mute);
-    text-decoration: none;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .internal-links > a {
     padding: 0 12px;
     color: var(--white-mute);
@@ -54,4 +75,77 @@ import { SITE_TITLE } from "../consts";
     text-decoration: none;
     color: var(--primary);
   }
+
+  .mob-nav {
+    width: 200px;
+    height: 55px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: var(--accent-dark);
+    z-index: 20;
+  }
+
+  .mob-nav > a {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1;
+    padding: 9px;
+    color: var(--white-mute);
+  }
+
+  .mob-nav > a.active {
+    color: var(--primary);
+  }
+
+  @media (max-width: 1024px) {
+    .internal-links > a {
+      padding: 0 6px;
+      font-size: 1rem;
+      border-bottom: 4px solid transparent;
+      text-decoration: none;
+    }
+  }
 </style>
+<script>
+  // This script runs only on the client (browser) after the page loads.
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".mob-nav-link");
+
+  // Set up the observer options (50% is the viewport trigger)
+  const options = {
+    rootMargin: "-50% 0px -50% 0px",
+    threshold: 0,
+  };
+
+  // Define the function to run when sections are intersected
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Remove 'active' from all links
+        navLinks.forEach((link) => link.classList.remove("active"));
+
+        // Find the link whose href matches the current section's ID
+        const activeLink = document.querySelector(
+          `.mob-nav a[href="#${entry.target.id}"]`,
+        );
+
+        console.log("active: ", activeLink);
+        // Add 'active' class to the matching link
+        if (activeLink) {
+          activeLink.classList.add("active");
+        } else {
+          if (window.location.pathname === "/") {
+            document.getElementById("home")?.classList.add("active");
+          }
+        }
+      }
+    });
+  }, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+</script>
