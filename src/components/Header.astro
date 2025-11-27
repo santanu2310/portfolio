@@ -3,7 +3,7 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 ---
 
-<header class="px-4 py-8 sm:px-12 lg:px-20">
+<header class="max-w-[1710px] px-4 py-8 sm:px-12 lg:px-20 2xl:mx-auto">
   <nav class="flex items-center justify-between">
     <h2 class="text-gray text-2xl font-medium lg:text-[28px]">
       <a href="/"><span class="text-primary font-bold">Coding </span> Santa</a>
@@ -12,7 +12,7 @@ import { SITE_TITLE } from "../consts";
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="#about">About</HeaderLink>
       <HeaderLink href="#projects">Projects</HeaderLink>
-      <HeaderLink href="/blog">Contact</HeaderLink>
+      <HeaderLink href="/blog">Blogs</HeaderLink>
     </div>
   </nav>
 
@@ -86,6 +86,16 @@ import { SITE_TITLE } from "../consts";
     border-radius: 30px;
     background-color: var(--accent-dark);
     z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+  }
+
+  .mob-nav.visible {
+    opacity: 1;
+    visibility: visible;
   }
 
   .mob-nav > a {
@@ -148,4 +158,22 @@ import { SITE_TITLE } from "../consts";
   sections.forEach((section) => {
     observer.observe(section);
   });
+
+  const mobNav = document.querySelector(".mob-nav");
+  let scrollTimeout: any;
+  if (mobNav) {
+    window.addEventListener("scroll", function () {
+      clearTimeout(scrollTimeout);
+
+      if (window.scrollY > 700) {
+        mobNav.classList.add("visible");
+
+        scrollTimeout = setTimeout(() => {
+          mobNav.classList.remove("visible");
+        }, 3000);
+      } else {
+        mobNav.classList.remove("visible");
+      }
+    });
+  }
 </script>
