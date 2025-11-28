@@ -42,6 +42,7 @@ const { id, images } = Astro.props;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     user-select: none; /* Prevents text selection on click */
+    overflow: hidden;
   }
 
   /* --- Card Stacking Logic using :nth-child --- */
@@ -86,36 +87,40 @@ const { id, images } = Astro.props;
 
 <!-- The HTML structure for the card deck -->
 <div class="card-deck" id={id}>
-  <div
-    class="card"
-    style="background: linear-gradient(135deg, #e57373, #ef5350);"
-  >
-    1
-  </div>
-  <div
-    class="card"
-    style="background: linear-gradient(135deg, #ba68c8, #ab47bc);"
-  >
-    2
-  </div>
-  <div
-    class="card"
-    style="background: linear-gradient(135deg, #64b5f6, #42a5f5);"
-  >
-    3
-  </div>
-  <div
-    class="card"
-    style="background: linear-gradient(135deg, #81c784, #66bb6a);"
-  >
-    4
-  </div>
-  <div
-    class="card"
-    style="background: linear-gradient(135deg, #ffd54f, #ffa726);"
-  >
-    5
-  </div>
+  {
+    images.map((image) => (
+      <div
+        class="card"
+        style="background: linear-gradient(135deg, #e57373, #ef5350);"
+      >
+        <img class="h-full w-full object-cover" src={image} alt={image} />
+      </div>
+    ))
+  }
+  <!--   <div -->
+  <!--   class="card" -->
+  <!--   style="background: linear-gradient(135deg, #ba68c8, #ab47bc);" -->
+  <!-- > -->
+  <!--   2 -->
+  <!-- </div> -->
+  <!-- <div -->
+  <!--   class="card" -->
+  <!--   style="background: linear-gradient(135deg, #64b5f6, #42a5f5);" -->
+  <!-- > -->
+  <!--   3 -->
+  <!-- </div> -->
+  <!-- <div -->
+  <!--   class="card" -->
+  <!--   style="background: linear-gradient(135deg, #81c784, #66bb6a);" -->
+  <!-- > -->
+  <!--   4 -->
+  <!-- </div> -->
+  <!-- <div -->
+  <!--   class="card" -->
+  <!--   style="background: linear-gradient(135deg, #ffd54f, #ffa726);" -->
+  <!-- > -->
+  <!--   5 -->
+  <!-- </div> -->
 </div>
 <script define:vars={{ id }}>
   document.addEventListener("DOMContentLoaded", () => {

@@ -15,7 +15,7 @@ const blog = defineCollection({
   }),
 });
 
-const projects = defineCollection({
+const personal_projects = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -24,9 +24,11 @@ const projects = defineCollection({
     description: z.string(),
     techstack: z.array(z.string()),
     imageUrls: z.array(z.string()),
-    demoUrl: z.string().url().optional(),
+    siteUrl: z.string().url().optional(),
     repoUrl: z.string().url().optional(),
   }),
 });
 
-export const collections = { blog, projects };
+const client_projects = personal_projects;
+
+export const collections = { blog, personal_projects, client_projects };
