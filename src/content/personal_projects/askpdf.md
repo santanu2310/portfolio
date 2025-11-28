@@ -1,5 +1,6 @@
 ---
 title: "Messaging Application (askpdf)"
+priority: 1
 year: "2025"
 path: "askpdf"
 description: "Bridge is a realtime messaging application audio and video calling. It's key feature include realtime message status update, file transfer using AWS S3 and presigned url, Voice and Video call using WebRTC etc."

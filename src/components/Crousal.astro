@@ -89,10 +89,7 @@ const { id, images } = Astro.props;
 <div class="card-deck" id={id}>
   {
     images.map((image) => (
-      <div
-        class="card"
-        style="background: linear-gradient(135deg, #e57373, #ef5350);"
-      >
+      <div class="card">
         <img class="h-full w-full object-cover" src={image} alt={image} />
       </div>
     ))

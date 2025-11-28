@@ -1,6 +1,7 @@
 ---
 title: "Messaging Application (Bridge)"
 year: "2025"
+priority: 2
 path: "bridge"
 description: "Bridge is a realtime messaging application audio and video calling. It's key feature include realtime message status update, file transfer using AWS S3 and presigned url, Voice and Video call using WebRTC etc."
 techstack:
@@ -19,6 +20,6 @@ techstack:
     "Docker",
     "Nginx",
   ]
-imageUrls: ["/project/bridge-1.webp"]
+imageUrls: ["/projects/images/bridge0.webp", "/projects/images/bridge1.webp"]
 repoUrl: "https://github.com/santanu2310/Bridge-RabbitMQ"
 ---

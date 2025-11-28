@@ -2,7 +2,8 @@
 title: "Pallab Photography"
 year: "2025"
 path: "askpdf"
-description: "Bridge is a realtime messaging application audio and video calling. It's key feature include realtime message status update, file transfer using AWS S3 and presigned url, Voice and Video call using WebRTC etc."
+priority: 1
+description: "A modern, animated photography portfolio with dynamic galleries, integrated blogging, and embedded maps for enhanced client connection."
 techstack: ["TypeScript", "NextJS", "React", "Tailwind", "Sanity"]
 imageUrls:
   [
