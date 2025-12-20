@@ -7,80 +7,53 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, author, description, pubDate, updatedDate, heroImage } =
+  Astro.props;
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
-      .hero-image {
-        width: 100%;
-      }
-      .hero-image img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .prose {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
-        color: rgb(var(--gray-dark));
-      }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0.5em 0;
-      }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
   </head>
 
   <body>
     <Header />
-    <main>
-      <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
-        <div class="prose">
+    <main class="flex justify-center">
+      <article class="mt-4 w-3xl max-w-full">
+        <div class="prose text-white">
           <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
+            <h1 class="text-3xl font-bold md:text-4xl">{title}</h1>
+            <div class="mt-4 flex justify-between text-base font-light">
+              <span>By {author}</span>
+              <div class="date">
+                <FormattedDate date={pubDate} />
+                {
+                  updatedDate && (
+                    <div class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </div>
+                  )
+                }
+              </div>
             </div>
-            <h1>{title}</h1>
-            <hr />
           </div>
+          <hr class="text-gray mt-2 opacity-20" />
+          <div
+            class="my-8 aspect-[3/2] h-auto w-full overflow-hidden rounded-lg"
+          >
+            {
+              heroImage && (
+                <img
+                  class="h-full w-full object-cover"
+                  src={heroImage}
+                  alt=""
+                />
+              )
+            }
+          </div>
+
           <slot />
+          <hr class="text-gray mt-10 opacity-20" />
         </div>
       </article>
     </main>
