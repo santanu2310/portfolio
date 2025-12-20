@@ -23,7 +23,7 @@ const posts = (await getCollection("blog")).sort(
         <ul class="flex w-full flex-wrap justify-evenly">
           {
             posts.map((post) => (
-              <li class="mt-8 w-2/5">
+              <li class="mt-8 w-11/12 md:w-2/5">
                 <a class="flex w-full flex-col" href={`/blog/${post.id}/`}>
                   <div class="aspect-[3/2] h-auto w-full overflow-hidden rounded-lg">
                     <img
