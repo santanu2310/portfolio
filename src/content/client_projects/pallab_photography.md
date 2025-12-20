@@ -1,7 +1,7 @@
 ---
 title: "Pallab Photography"
 year: "2025"
-path: "askpdf"
+path: "pallab"
 priority: 1
 description: "A modern, animated photography portfolio with dynamic galleries, integrated blogging, and embedded maps for enhanced client connection."
 techstack: ["TypeScript", "NextJS", "React", "Tailwind", "Sanity"]

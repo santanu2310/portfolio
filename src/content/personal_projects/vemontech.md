@@ -20,6 +20,6 @@ techstack:
     "Docker",
     "Nginx",
   ]
-imageUrls: ["/project/bridge-1.webp"]
+imageUrls: [""]
 repoUrl: "https://github.com/santanu2310/Bridge-RabbitMQ"
 ---
