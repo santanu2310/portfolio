@@ -21,5 +21,5 @@ techstack:
     "Nginx",
   ]
 imageUrls: ["/projects/images/golpo0.webp", "/projects/images/golpo1.webp"]
-repoUrl: "https://github.com/santanu2310/Bridge-RabbitMQ"
+repoUrl: "https://github.com/santanu2310/Golpo_vercel"
 ---

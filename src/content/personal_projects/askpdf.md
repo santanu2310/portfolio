@@ -27,5 +27,5 @@ imageUrls:
     "/projects/images/askpdf/img2.webp",
     "/projects/images/askpdf/img3.webp",
   ]
-repoUrl: "https://github.com/santanu2310/Bridge-RabbitMQ"
+repoUrl: "https://github.com/santanu2310/AskPDF"
 ---
