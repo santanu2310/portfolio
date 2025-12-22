@@ -20,6 +20,13 @@ techstack:
     "Docker",
     "Nginx",
   ]
-imageUrls: [""]
+imageUrls:
+  [
+    "/projects/images/venomtech/img0.webp",
+    "/projects/images/venomtech/img1.webp",
+    "/projects/images/venomtech/img2.webp",
+    "/projects/images/venomtech/img3.webp",
+    "/projects/images/venomtech/img4.webp",
+  ]
 repoUrl: "https://github.com/santanu2310/Bridge-RabbitMQ"
 ---
