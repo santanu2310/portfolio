@@ -1,24 +1,24 @@
 ---
-title: "Messaging Application (askpdf)"
+title: "RAG Application (AskPDF)"
 priority: 1
 year: "2025"
 path: "askpdf"
-description: "Bridge is a realtime messaging application audio and video calling. It's key feature include realtime message status update, file transfer using AWS S3 and presigned url, Voice and Video call using WebRTC etc."
+description: "AskPDF is a Retrieval-Augmented Generation (RAG) system designed to process large documents (PDFs) and provide accurate, context-aware answers to user queries. By leveraging vector embeddings and Large Language Models (LLMs), it allows users to interact with their document repository naturally."
 techstack:
   [
     "Python",
     "FastAPI",
-    "MongoDB",
+    "PostgreSQL",
     "RabbitMQ",
-    "Redis",
+    "Lambda",
+    "S3",
     "Celery",
     "TypeScript",
-    "Vue",
+    "Svelte",
     "IndexedDB",
-    "Terraform",
-    "Ansible",
     "Docker",
-    "Nginx",
+    "Gemini API",
+    "SentenceTransformer(MiniLM-L6-v2)",
   ]
 imageUrls:
   [

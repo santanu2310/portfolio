@@ -1,25 +1,10 @@
 ---
-title: "Messaging Application (Bridge)"
-year: "2025"
-priority: 4
+title: "Restorent Site(GOLPO)"
+year: "2023"
+priority: 5
 path: "golpo"
-description: "Bridge is a realtime messaging application audio and video calling. It's key feature include realtime message status update, file transfer using AWS S3 and presigned url, Voice and Video call using WebRTC etc."
-techstack:
-  [
-    "Python",
-    "FastAPI",
-    "MongoDB",
-    "RabbitMQ",
-    "Redis",
-    "Celery",
-    "TypeScript",
-    "Vue",
-    "IndexedDB",
-    "Terraform",
-    "Ansible",
-    "Docker",
-    "Nginx",
-  ]
+description: "Golpo A modern restaurant platform built for the digital age. It enables users to browse menus, book tables, and discover ongoing deals through a sleek, responsive interface. Powered by Django and PostgreSQL, and deployed with AWS S3 for optimized media hosting."
+techstack: ["Python", "Django", "Postgres", "AWS S3", "HTML", "CSS"]
 imageUrls: ["/projects/images/golpo0.webp", "/projects/images/golpo1.webp"]
 repoUrl: "https://github.com/santanu2310/Golpo_vercel"
 ---

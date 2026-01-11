@@ -1,24 +1,20 @@
 ---
-title: "Messaging Application (Venomtech)"
+title: "Tech Influncer's Site (Venomtech)"
 year: "2025"
-priority: 3
+priority: 4
 path: "vemontech"
-description: "Bridge is a realtime messaging application audio and video calling. It's key feature include realtime message status update, file transfer using AWS S3 and presigned url, Voice and Video call using WebRTC etc."
+description: "Venom Tech is an all-in-one creator platform that bridges the gap between content and commerce. It empowers tech influencers to unify their digital presence—including blogs, YouTube content, and branded merchandise—into a single, cohesive storefront. Built with a focus on security and scalability, it features a custom OAuth/JWT authentication system, real-time video synchronization via the YouTube Data API, and seamless payment processing through Razorpay."
 techstack:
   [
     "Python",
-    "FastAPI",
-    "MongoDB",
-    "RabbitMQ",
-    "Redis",
-    "Celery",
-    "TypeScript",
+    "Django",
+    "DjangoRST",
+    "Oauth",
+    "Youtube Data API",
+    "PostgreSQL",
+    "Razorpay",
+    "Javascript",
     "Vue",
-    "IndexedDB",
-    "Terraform",
-    "Ansible",
-    "Docker",
-    "Nginx",
   ]
 imageUrls:
   [
