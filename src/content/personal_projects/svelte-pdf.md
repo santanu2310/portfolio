@@ -7,5 +7,5 @@ description: "A developer-friendly, light-weight NPM package for Svelte that sim
 techstack: ["Svelte", "TypeScript", "Pdf.js", "Tailwind"]
 imageUrls:
   ["/projects/images/sveltepdf0.webp", "/projects/images/sveltepdf1.webp"]
-repoUrl: "https://github.com/santanu2310/Bridge-RabbitMQ"
+repoUrl: "https://github.com/santanu2310/svelte-pdf-kit"
 ---

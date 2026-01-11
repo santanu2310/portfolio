@@ -9,6 +9,7 @@ techstack:
     "Python",
     "Django",
     "DjangoRST",
+    "Celery",
     "Oauth",
     "Youtube Data API",
     "PostgreSQL",
@@ -24,5 +25,5 @@ imageUrls:
     "/projects/images/venomtech/img3.webp",
     "/projects/images/venomtech/img4.webp",
   ]
-repoUrl: "https://github.com/santanu2310/Bridge-RabbitMQ"
+repoUrl: "https://github.com/santanu2310/VENOMTECH"
 ---
