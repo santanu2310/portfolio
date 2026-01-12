@@ -9,9 +9,9 @@ import { SITE_TITLE } from "../consts";
       <a href="/"><span class="text-primary font-bold">Coding </span> Santa</a>
     </h2>
     <div class="internal-links hidden sm:flex">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="#about">About</HeaderLink>
-      <HeaderLink href="#projects">Projects</HeaderLink>
+      <HeaderLink class={"nav-link"} href="/">Home</HeaderLink>
+      <HeaderLink class={"nav-link"} href="#about">About</HeaderLink>
+      <HeaderLink class={"nav-link"} href="#projects">Projects</HeaderLink>
       <HeaderLink href="/blog">Blogs</HeaderLink>
     </div>
   </nav>
@@ -20,7 +20,7 @@ import { SITE_TITLE } from "../consts";
     class="mob-nav fixed right-10 bottom-10 flex border border-gray-600"
     id=""
   >
-    <HeaderLink class={"mob-nav-link"} id={"home"} href="/"
+    <HeaderLink class={"mob-nav-link nav-link"} id={"home"} href="/"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ import { SITE_TITLE } from "../consts";
         ></path></svg
       ></HeaderLink
     >
-    <HeaderLink href="#about" class={"mob-nav-link"}
+    <HeaderLink href="#about" class={"mob-nav-link nav-link"}
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ import { SITE_TITLE } from "../consts";
         ></path></svg
       ></HeaderLink
     >
-    <HeaderLink href="#projects" class={"mob-nav-link"}
+    <HeaderLink href="#projects" class={"mob-nav-link nav-link"}
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -122,7 +122,8 @@ import { SITE_TITLE } from "../consts";
 <script>
   // This script runs only on the client (browser) after the page loads.
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".mob-nav-link");
+  const mobNavLinks = document.querySelectorAll(".mob-nav-link");
+  const navLinks = document.querySelectorAll(".nav-link");
 
   // Set up the observer options (50% is the viewport trigger)
   const options = {
@@ -135,7 +136,7 @@ import { SITE_TITLE } from "../consts";
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // Remove 'active' from all links
-        navLinks.forEach((link) => link.classList.remove("active"));
+        mobNavLinks.forEach((link) => link.classList.remove("active"));
 
         // Find the link whose href matches the current section's ID
         const activeLink = document.querySelector(
@@ -176,4 +177,27 @@ import { SITE_TITLE } from "../consts";
       }
     });
   }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const href = link.getAttribute("href");
+      const isHome = window.location.pathname === "/";
+
+      if (href === "/") {
+        if (!isHome) {
+          window.location.href = "/";
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      } else if (href && href.startsWith("#")) {
+        if (isHome) {
+          const element = document.querySelector(href);
+          element?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.location.href = "/" + href;
+        }
+      }
+    });
+  });
 </script>
