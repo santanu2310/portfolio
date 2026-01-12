@@ -7,11 +7,11 @@ description: "A sleek, minimalist blogging platform built with Django by emphasi
 techstack: ["Python", "Django", "PostgreSQL", "HTML", "CSS"]
 imageUrls:
   [
-    "/projects/images/venomtech/img0.webp",
-    "/projects/images/venomtech/img1.webp",
-    "/projects/images/venomtech/img2.webp",
-    "/projects/images/venomtech/img3.webp",
-    "/projects/images/venomtech/img4.webp",
+    "/projects/images/probo/probo0.webp",
+    "/projects/images/probo/probo1.webp",
+    "/projects/images/probo/probo2.webp",
+    "/projects/images/probo/probo3.webp",
+    "/projects/images/probo/probo4.webp",
   ]
 repoUrl: "https://github.com/santanu2310/PROBO"
 ---
